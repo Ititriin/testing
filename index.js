@@ -28,6 +28,8 @@ async function script() {
   const shoppingCart = await driver.findElement(By.xpath('//tagname[@Attribute=’value’]')).click();
 
   // 7. Change item quantity, increasing by 1
+  await driver.findElement(By.id(`//*[@id="increase-cart-qty-btn-5639517"]`)).click();
+  
   // 8. Remove all items from the shopping cart
   // 9. Search for item "Jope"
   const itemSearch = "Jope";
