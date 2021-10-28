@@ -4,7 +4,7 @@ async function script() {
   // Steps to test
   const driver = await new Builder().forBrowser("chrome").build();
 
-  // 1. Open the webpage. Log it's title
+  // 1. Open the webpage. Log its title
   await driver.get("https://www.weekendshoes.ee/naistele/saapad.html");
   //console.log("opening the web page");
   const titleTag = await driver.getTitle();
@@ -31,7 +31,8 @@ async function script() {
   // 8. Remove all items from the shopping cart
   // 9. Search for item "Jope"
   const itemSearch = "Jope";
-  const bodyElement = await driver.findElement(By.xpath('//tagname[@Attribute=’value’]'));
+  const bodyElement = await driver.findElement(By.xpath('//*[@id="search"]')).click();
+
   // 10. Filter search results by popularity
 }
 
