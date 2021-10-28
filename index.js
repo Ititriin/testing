@@ -31,7 +31,7 @@ async function script() {
   await driver.findElement(By.id(`//*[@id="increase-cart-qty-btn-5639517"]`)).click();
 
   // 8. Remove all items from the shopping cart
-  await driver.findElement(By.id(`//*[@id=""shopping-cart-table"]/tbody/tr[1]/td[1]/div/a"]`)).click();
+  await driver.findElement(By.id(`//*[@id="shopping-cart-table"]/tbody/tr[1]/td[1]/div/a"]`)).click();
 
   // 9. Search for item "Jope"
   const itemSearch = "Jope";
