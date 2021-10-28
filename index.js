@@ -13,7 +13,7 @@ async function script() {
   // 2. Locate and choose item
   await driver.findElement(By.xpath('//*[@id="amasty-shopby-product-list"]/div[3]/ol/li[69]/div/a/picture/img')).click();
   await driver.findElement(By.className('product-options-wrapper')).click()
-  //await driver.manage().setTimeouts({ implicit: 10000 });
+  await driver.manage().setTimeouts({ implicit: 13000 });
   await driver.findElement(By.xpath('//*[@id="product-options-wrapper"]/div/div/div/div/div[3]/div/ul/li[2]/div[1]')).click()
  
   // 3. Add it to the wishlist
@@ -25,16 +25,17 @@ async function script() {
   await driver.findElement(By.id('wishlist-link-mobile')).click();
   await driver.findElement(By.className('action primary go-to-wishlist')).click();
 
-
   // 5. Add item into shopping cart
-  //await driver.findElement(By.className(`action tocart`)).click();
-  //await driver.findElement(By.id(`//*[@id="product-addtocart-button"]`)).click();
+  await driver.findElement(By.xpath('//*[@id="wishlist-view-form"]/div[2]/div[1]/button[3]')).click();
 
   // 6. Open shopping cart
-  //await driver.findElement(By.xpath('//tagname[@Attribute=’value’]')).click();
+  await driver.findElement(By.className('action viewcart')).click();
 
   // 7. Change item quantity, increasing by 1
-  //await driver.findElement(By.id(`//*[@id="increase-cart-qty-btn-5639517"]`)).click();
+  await driver.manage().setTimeouts({ implicit: 12000 });
+  await driver.findElement(By.className('action qty increase-qty increase-item-qty-btn')).click();
+
+  //increase-cart-qty-btn-5611753
 
   // 8. Remove all items from the shopping cart
   //await driver.findElement(By.id(`//*[@id="shopping-cart-table"]/tbody/tr[1]/td[1]/div/a"]`)).click();
