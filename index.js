@@ -17,7 +17,7 @@ async function script() {
   driver.executeScript('arguments[0].click();',wishlistItem);
 
   // 4. Open item via the wishlist
-  const openWishlist = await driver.findElement(By.xpath(`//*[@id="wishlist-link-mobile"]`));
+  const openWishlist = await driver.findElement(By.className(`action showcart active`));
 
   // 5. Add item into shopping cart
   await driver.findElement(By.id(`//*[@id="amasty-shopby-product-list"]/div[3]/ol/li[69]/div/a]`)).click();
@@ -25,7 +25,7 @@ async function script() {
   await driver.findElement(By.id(`//*[//*[@id="product-addtocart-button"]`)).click();
 
   // 6. Open shopping cart
-  const shoppingCart = await driver.findElement(By.xpath('//tagname[@Attribute=’value’]'));
+  const shoppingCart = await driver.findElement(By.xpath('//tagname[@Attribute=’value’]')).click();
 
   // 7. Change item quantity, increasing by 1
   // 8. Remove all items from the shopping cart
