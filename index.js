@@ -14,7 +14,7 @@ async function script() {
   const wishlistItem = await driver.findElement(By.xpath('//*[@id="amasty-shopby-product-list"]/div[3]/ol/li[69]/div/a]'));
 
   // 3. Add it to the wishlist
-  driver.executeScript('arguments[0].click();',wishlistItem);
+  await driver.executeScript('arguments[0].click();',wishlistItem);
 
   // 4. Open item via the wishlist
   const openWishlist = await driver.findElement(By.className(`action showcart active`)).click();
