@@ -22,7 +22,7 @@ async function script() {
   // 5. Add item into shopping cart
   await driver.findElement(By.id(`//*[@id="amasty-shopby-product-list"]/div[3]/ol/li[69]/div/a]`)).click();
   await driver.findElement(By.id(`//*[@id="product-options-wrapper"]/div/div/div/div/div[3]/div/ul/li[2]/div[1]`)).click();
-  await driver.findElement(By.id(`//*[//*[@id="product-addtocart-button"]`)).click();
+  await driver.findElement(By.id(`//*[@id="product-addtocart-button"]`)).click();
 
   // 6. Open shopping cart
   const shoppingCart = await driver.findElement(By.xpath('//tagname[@Attribute=’value’]')).click();
