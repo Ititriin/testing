@@ -29,20 +29,26 @@ async function script() {
   await driver.findElement(By.xpath('//*[@id="wishlist-view-form"]/div[2]/div[1]/button[3]')).click();
 
   // 7. Change item quantity, increasing by 1
-  //await driver.manage().setTimeouts({ implicit: 20000 });
-  //await driver.findElement(By.className("action qty increase-qty increase-item-qty-btn")).click();
+  await driver.manage().setTimeouts({ implicit: 10000 });
+  await driver.findElement(By.className("action viewcart")).click();
+  await driver.findElement(By.className("action qty increase-qty increase-item-qty-btn")).click();
+  console.log("adding an extra object");
+
 
   // 8. Remove all items from the shopping cart
-  //await driver.manage().setTimeouts({ implicit: 20000 });
-  //await driver.findElement(By.xpath('//*[@id="shopping-cart-table"]/tbody/tr[1]/td[1]/div/a')).click();
+  await driver.manage().setTimeouts({ implicit: 20000 });
+  await driver.findElement(By.xpath('//*[@id="shopping-cart-table"]/tbody/tr[1]/td[1]/div/a')).click();
 
   // 9. Search for item "Jope"
+  await driver.manage().setTimeouts({ implicit: 10000 });
   //const itemSearch = "Jope";
- // await driver.findElement(By.xpath('//*[@id="search"]')).click();
- // await driver.findElement(By.id("search")).sendKeys(itemSearch, Key.RETURN);
+  //await driver.findElement(By.id("search_mini_form_mobile")).click();
+  //await driver.sendKeys(itemSearch, Key.RETURN);
+  //console.log("Let's search something");
 
   // 10. Filter search results by popularity
   //await driver.findElement(By.id(`//*[@id="sorter"]/option[1]`)).click();
 
 }
+
 script()
